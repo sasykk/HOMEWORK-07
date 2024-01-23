@@ -113,9 +113,10 @@ def remove_empty_folders(path):
             except OSError:
                 pass
 
-def main(folder_path):
+def main():
+    folder_path = Path(sys.argv[1])
     print(folder_path)
-    scan.scan(folder_path)
+    scan(folder_path)
     items = {'images': scan.image_files,
              'video': scan.video_files,
              'audio': scan.music_files,
